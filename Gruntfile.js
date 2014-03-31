@@ -50,17 +50,17 @@ module.exports = function(grunt) {
     },
 
     less: {
-      default: {
+      bootstrap: {
         options: {
           compress: false,
           yuicompress: false,
           optimization: 2,
           banner: '<%= build.banner %>',
-          paths: ['<%= build.dist %><%= build.templates %>default/styles/']
+          paths: ['<%= build.dist %><%= build.templates %>bootstrap/css/']
         },
         files: {
-          '<%= build.dist %><%= build.templates %>default/styles/main.css':
-            '<%= build.src %><%= build.templates %>default/styles/main.less'
+          '<%= build.dist %><%= build.templates %>bootstrap/css/style.css':
+            '<%= build.src %><%= build.templates %>bootstrap/css/style.less'
         }
       }
     },
@@ -82,7 +82,10 @@ module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
 
+
+
   grunt.registerTask('build', ['copy:modx','build:src']);
-  grunt.registerTask('build:src', ['newer:copy:src','less']);
+  grunt.registerTask('build:src', ['newer:copy:src','build:bootstrap']);
+  grunt.registerTask('build:bootstrap', ['less','cssmin']);
 
 };
