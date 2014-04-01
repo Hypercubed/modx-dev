@@ -85,7 +85,7 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask('build', ['copy:modx','build:src']);
-  grunt.registerTask('build:src', ['newer:copy:src','build:bootstrap']);
-  grunt.registerTask('build:bootstrap', ['less','cssmin']);
+  grunt.registerTask('build:src', ['newer:copy:src','build:template']);
+  grunt.registerTask('build:template', ['less','cssmin']);
 
 };

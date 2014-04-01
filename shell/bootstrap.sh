@@ -18,6 +18,7 @@ then
 
     # Disable sendfile
     sudo sed -i.bak 's/^#EnableSendfile.*/EnableSendfile off/' /etc/httpd/conf/httpd.conf
+    # todo: allow override
 
     touch /var/log/phpsetup
 
