@@ -4,6 +4,10 @@
 
 This is an example of using grunt to manage and vagrant to test a modx installation.  This folder contains a Gruntfile used to generate assets (css files), bower config file for managing front end components (twitter bootstrap and jquery), and a Vagrant definition file for testing.  This is just an example, there are many ways to do this.
 
+## Motivation
+
+I often need to install and test a new version of modx without disturbing the production site. In addition I wanted to use grunt and bower to manage assets and store my customizations, including the database, in git.  Other modx/vagrant systems I found seamed bloated, required development on the guest machine, and/or had no mechanism to persist the database.  This example keeps the 3rd party assets, database, and my customizations separate for optimal git-ability.  Using grunt and bower I can use advanced tooling, such as less and cssmin, and minimize external assets in the repository.
+
 # For developers
 
 ## Background
